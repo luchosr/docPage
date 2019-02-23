@@ -17,12 +17,12 @@
             <!-- <header>Main</header> -->
                 <nav id="navbar">
                         <header id="header">Solidity v0.5.4</header>
-                        <a href="#Main" class="nav-link">Main</a>
+                        <!-- <a href="#Main" class="nav-link">Main</a> -->
                         <a href="#Introduction_to_Solidity" class="nav-link">Introduction to Solidity</a>
                         <a href="#Introduction_to_Smart_Contracts" class="nav-link">Introduction to Smart Contracts</a>
                         <a href="#Blockchain_Basics" class="nav-link">Blockchain Basics</a>
                         <a class="nav-link" href="#The_Ethereum_Virtual_Machine">The Ethereum Virtual Machine</a>
-                        <a href="#Functions"class="nav-link">Functions</a>
+                        <a href="#Installing_the_Solidity_Compiler"class="nav-link">Installing the Solidity Compiler</a>
               </nav>
         <!-- </section> -->
         <section class="main-section" id="Introduction_to_Solidity">
@@ -301,7 +301,52 @@
             </section>
             <section class="main-section" id="Installing_the_Solidity_Compiler">
             <header>Installing the Solidity Compiler</header>
-                
+                <h3>
+                    Versioning
+                </h3>
+                <p>
+                        Solidity versions follow semantic versioning and in addition to releases, nightly development builds are also made available. The nightly builds are not guaranteed to be working and despite best efforts they might contain undocumented and/or broken changes. We recommend using the latest release. Package installers below will use the latest release.
+                     </p>
+
+                     <h3>Remix</h3>
+                     <p>
+                            Access Remix online, you don’t need to install anything. If you want to use it without connection to the Internet, go to https://github.com/ethereum/remix-live/tree/gh-pages and download the .zip file as explained on that page.
+
+
+                     </p>
+
+                     <p>Further options on this page detail installing commandline Solidity compiler software on your computer. Choose a commandline compiler if you are working on a larger contract or if you require more compilation options.
+
+                        </p>
+
+
+                        <h3>npm / Node.js
+                            </h3>
+
+                            <p>
+                                    Use npm for a convenient and portable way to install solcjs, a Solidity compiler. The solcjs program has fewer features than the ways to access the compiler described further down this page. The Using the Commandline Compiler documentation assumes you are using the full-featured compiler, solc. The usage of solcjs is documented inside its own repository.
+
+
+                            </p>
+                            <p>
+                                    Note: The solc-js project is derived from the C++ solc by using Emscripten which means that both use the same compiler source code. solc-js can be used in JavaScript projects directly (such as Remix). Please refer to the solc-js repository for instructions.
+
+
+                            </p>
+                            <code>
+                                <pre>
+                                        npm install -g solc
+
+                                </pre>
+                            </code>
+
+
+                            <P class="main-section-note">
+                                    The commandline executable is named solcjs.
+                                    <br>
+                                    The comandline options of solcjs are not compatible with solc and tools (such as geth) expecting the behaviour of solc will not work with solcjs.
+
+                            </P>
 
 
             </section>
