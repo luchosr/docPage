@@ -1,12 +1,24 @@
 body{
     background-color: rgba(215, 214, 214, 0.598);
-}
+    display: grid;
+    grid-template-columns: minmax(300px, auto) 1fr;
+    grid-template-areas: "navbar main-doc";
+}   
 .main-doc{
     margin: 1em;
-    text-align: justify;
+    text-align:  justify;
+    grid-area: main-doc; 
 }
 .navbar{
-    display: flex;
-    flex-direction: column;
+    grid-area: navbar;
+    position:fixed;
+}
+#main-doc{
     
+}
+.navbar a{
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px 0;
 }
