@@ -3,11 +3,13 @@ body{
     display: grid;
     grid-template-columns: minmax(300px, auto) 1fr;
     grid-template-areas: "navbar main-doc";
+    grid-gap: 10px;
 }   
 .main-doc{
     margin: 1em;
     text-align:  justify;
     grid-area: main-doc; 
+   
 }
 .navbar{
     grid-area: navbar;
@@ -21,4 +23,13 @@ body{
     border: 1px solid black;
     padding: 5px;
     margin: 10px 0;
+    color: rgb(0, 0, 0);
+}
+#header{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+pre{
+    border-radius: 3px;
+    background-color: rgba(60, 62, 62, 0.091);    
 }
