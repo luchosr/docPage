@@ -4,7 +4,9 @@ body{
     grid-template-columns: minmax(300px, auto) 1fr;
     grid-template-areas: "navbar main-doc";
     grid-gap: 10px;
-}   
+    width: 80%;
+}
+
 .main-doc{
     margin: 1em;
     text-align:  justify;
@@ -14,22 +16,26 @@ body{
 .navbar{
     grid-area: navbar;
     position:fixed;
-}
-#main-doc{
+    display: flex;
+    flex-direction: column;
     
 }
 .navbar a{
-    display: block;
     border: 1px solid black;
     padding: 5px;
     margin: 10px 0;
     color: rgb(0, 0, 0);
+    text-decoration: none;
 }
+
+
 #header{
     font-size: 1.5em;
     font-weight: bold;
 }
-pre{
+.main-section  code pre{
     border-radius: 3px;
-    background-color: rgba(60, 62, 62, 0.091);    
+    background-color: rgba(60, 62, 62, 0.091); 
+    margin: 40px;   
+    padding: 10px 0 10px 0; 
 }
