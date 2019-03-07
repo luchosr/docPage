@@ -4,14 +4,14 @@ body{
     grid-template-columns: minmax(300px, auto) 1fr;
     grid-template-areas: "navbar main-doc";
     grid-gap: 10px;
-    width: 80%;
+    margin: auto;
 }
 
 .main-doc{
     margin: 1em;
     text-align:  justify;
     grid-area: main-doc; 
-   
+    width: 60vw;
 }
 .navbar{
     grid-area: navbar;
@@ -33,9 +33,30 @@ body{
     font-size: 1.5em;
     font-weight: bold;
 }
-.main-section  code pre{
+code{
     border-radius: 3px;
     background-color: rgba(60, 62, 62, 0.091); 
-    margin: 40px;   
-    padding: 10px 0 10px 0; 
+    margin: 0px;   
+    padding: 10px 0 10px 0;     
+}
+
+/* @media screen and (max-width: 1375px){
+    body{
+        width: 60%;
+       
+    }
+    .navbar{
+        position: inherit;
+    }
+} */
+
+@media screen and (max-width: 750px){
+    body{
+        grid-template-columns: 1fr;
+        grid-template-areas: "navbar" "main-doc"; 
+       
+    }
+    .navbar{
+        position: inherit;
+    }
 }

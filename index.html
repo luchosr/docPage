@@ -83,23 +83,24 @@ https://www.onlineinterviewquestions.com/css-interview-questions/
             <h3>Storage</h3>
 
             <code>
-                <pre>
-                        pragma solidity >=0.4.0 <0.6.0;
+                
+                pragma solidity >=0.4.0 <0.6.0;
 
-                        contract SimpleStorage {
-                            uint storedData;
+              contract SimpleStorage {
+              uint storedData;
                         
-                            function set(uint x) public {
+            function set(uint x) public {
                                 storedData = x;
                             }
                         
                             function get() public view returns (uint) {
                                 return storedData;
                             }
-                        }
-                </pre>
+                        }          
+                
                     
             </code>
+
                 <p>The first line simply tells that the source code is written for Solidity version 0.4.0 or anything newer that does not break functionality (up to, but not including, version 0.6.0). This is to ensure that the contract is not compilable with a new (breaking) compiler version, where it could behave differently. So-called pragmas are common instructions for compilers about how to treat the source code (e.g. pragma once).</p>
                 <p>A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain. The line uint storedData; declares a state variable called storedData of type uint (unsigned integer of 256 bits). You can think of it as a single slot in a database that can be queried and altered by calling functions of the code that manages the database. In the case of Ethereum, this is always the owning contract. And in this case, the functions set and get can be used to modify or retrieve the value of the variable.</p>
                 <p>To access a state variable, you do not need the prefix this. as is common in other languages.</p>
@@ -110,7 +111,7 @@ https://www.onlineinterviewquestions.com/css-interview-questions/
                 <p>The following contract will implement the simplest form of a cryptocurrency. It is possible to generate coins out of thin air, but only the person that created the contract will be able to do that (it is easy to implement a different issuance scheme). Furthermore, anyone can send coins to each other without a need for registering with username and password — all you need is an Ethereum keypair.</p>
 
                 <code>
-                    <pre>
+                  
                             pragma solidity ^0.5.0;
 
                             contract Coin {
@@ -142,7 +143,7 @@ https://www.onlineinterviewquestions.com/css-interview-questions/
                                     emit Sent(msg.sender, receiver, amount);
                                 }
                             }
-                    </pre>
+                   
                 </code>
                 <p>This contract introduces some new concepts, let us go through them one by one.</p>
 
@@ -162,18 +163,18 @@ https://www.onlineinterviewquestions.com/css-interview-questions/
                         </p>
 
                         <code>
-                            <pre>
+                            
                                     function balances(address _account) external view returns (uint) {
                                         return balances[_account];
                                     }
-                            </pre>
+                            
                         </code>
 
                     <p>As you see, you can use this function to easily query the balance of a single account.</p>
                     <p>The line event Sent(address from, address to, uint amount); declares a so-called “event” which is emitted in the last line of the function send. User interfaces (as well as server applications of course) can listen for those events being emitted on the blockchain without much cost. As soon as it is emitted, the listener will also receive the arguments from, to and amount, which makes it easy to track transactions. In order to listen for this event, you would use the following JavaScript code (which assumes that Coin is a contract object created via web3.js or a similar module):
                         </p>
                             <code>
-                                <pre>
+                                
                                         Coin.Sent().watch({}, '', function(error, result) {
                                             if (!error) {
                                                 console.log("Coin transfer: " + result.args.amount +
@@ -184,7 +185,7 @@ https://www.onlineinterviewquestions.com/css-interview-questions/
                                                     "Receiver: " + Coin.balances.call(result.args.to));
                                             }
                                         })
-                                </pre>
+                                
                             </code>
 
                             <p>
