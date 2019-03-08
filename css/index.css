@@ -29,26 +29,18 @@ body{
 }
 
 
-#header{
+header{
     font-size: 1.5em;
     font-weight: bold;
 }
-code{
+pre{
     border-radius: 3px;
     background-color: rgba(60, 62, 62, 0.091); 
-    margin: 0px;   
-    padding: 10px 0 10px 0;     
+    margin: 0px; 
+    padding-left: -10px;
 }
 
-/* @media screen and (max-width: 1375px){
-    body{
-        width: 60%;
-       
-    }
-    .navbar{
-        position: inherit;
-    }
-} */
+
 
 @media screen and (max-width: 750px){
     body{
